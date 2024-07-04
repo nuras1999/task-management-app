@@ -8,3 +8,14 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
+h1 {
+  &.title {
+    margin-top: 8px;
+    color: $primary-color;
+  }
+}
+
+.pr-8 {
+  padding-right: 8px;
+}
