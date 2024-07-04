@@ -6,7 +6,19 @@
 <div class="tasks-list-container">
   @if(myTasks.length){ @for(task of myTasks; track task){
   <div class="task-item">
-    {{ task }}
+    <div class="task-title">
+      {{ task }}
+    </div>
+    <div class="action-buttons">
+      <div class="edit-button">
+        <i class="fa fa-pencil"></i>
+        Edit
+      </div>
+      <div class="delete-button">
+        <i class="fa fa-trash"></i>
+        Delete
+      </div>
+    </div>
   </div>
   } } @else {
   <div class="placeholder">No tasks are available in the list</div>

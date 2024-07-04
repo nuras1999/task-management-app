@@ -20,9 +20,56 @@
     background: $background-grey;
     border-radius: 8px;
     margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      flex-direction: column-reverse;
+      align-items: normal;
+    }
 
     &:last-child {
       margin-bottom: 0px;
+    }
+
+    .task-title {
+      @media (max-width: 768px) {
+        margin-top: 16px;
+      }
+    }
+    .action-buttons {
+      display: flex;
+      gap: 24px;
+
+      @media (max-width: 768px) {
+        justify-content: flex-end;
+      }
+
+      .edit-button {
+        padding: 8px 8px;
+        cursor: pointer;
+        border-radius: 8px;
+        color: $secondary-color;
+        background: $background-lightblue;
+        transition: all 0.2s linear;
+
+        &:hover {
+          background: $background-darkblue;
+        }
+      }
+
+      .delete-button {
+        padding: 8px 8px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: $text-color-red;
+        background: $background-lightred;
+        transition: all 0.2s linear;
+        &:hover {
+          background: $background-darkred;
+        }
+      }
     }
   }
 
