@@ -9,6 +9,7 @@
   background-color: $primary-color;
   padding-top: 20px;
   transition: all 0.3s linear;
+  z-index: 999;
 
   &.hide {
     left: -200px;
