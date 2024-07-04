@@ -1,0 +1,60 @@
+@import "../styles.scss";
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $primary-color;
+  padding-top: 20px;
+  transition: all 0.3s linear;
+
+  &.hide {
+    left: -200px;
+  }
+
+  button {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: $text-color;
+    background: none;
+    border: none;
+    text-align: left;
+    width: 100%;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+
+    &.active {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.main-content {
+  margin-left: 200px;
+  @media (max-width: 768px) {
+    margin-left: 0px;
+  }
+  padding: 16px;
+
+  .navMenuIcon {
+    display: none;
+    position: fixed;
+    padding: 1rem;
+    box-shadow: 0px 0px 10px $ternary-color;
+    border-radius: 1rem;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    right: 16px;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

@@ -1,8 +1,27 @@
-<nav class="sidenav">
-  <button (click)="navigateTo('/dashboard')">Dashboard</button>
-  <button (click)="navigateTo('/tasks')">Tasks</button>
+<nav class="sidenav" [ngClass]="{ hide: showNavMenu }">
+  <button
+    (click)="navigateTo('/dashboard')"
+    [class.active]="router.url === '/dashboard'"
+  >
+    Dashboard
+  </button>
+  <button
+    (click)="navigateTo('/tasks')"
+    [class.active]="router.url === '/tasks'"
+  >
+    Tasks
+  </button>
 </nav>
 
 <div class="main-content">
+  <!-- Nav menu icon button for small screens -->
+  <div class="navMenuIcon">
+    @if(showNavMenu) {
+    <i class="fas fa-bars fa-2x navIcon" (click)="toggleNavMenu()"></i>
+    } @else {
+    <i class="fas fa-times fa-2x navIcon" (click)="toggleNavMenu()"></i>
+    }
+  </div>
+
   <router-outlet></router-outlet>
 </div>
