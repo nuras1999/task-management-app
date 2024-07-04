@@ -33,7 +33,7 @@ export class TasksComponent {
       taskName: "Task 2",
     },
     {
-      isCompleted: true,
+      isCompleted: false,
       taskName: "Task 3",
     },
     {
@@ -41,7 +41,7 @@ export class TasksComponent {
       taskName: "Task 4",
     },
     {
-      isCompleted: true,
+      isCompleted: false,
       taskName: "Task 5",
     },
   ];

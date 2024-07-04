@@ -1,1 +1,57 @@
 @import "../../app.component.scss";
+
+.outer-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 32px;
+  @media (max-width: 768px) {
+    margin: 32px 32px;
+    flex-direction: column;
+  }
+
+  .progress-container {
+    background: $background-grey;
+    color: $secondary-color;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    flex-direction: column;
+
+    .percentage {
+      font-size: 3rem;
+    }
+  }
+
+  .overview-container {
+    margin: 8px 32px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 16px;
+    align-items: center;
+    @media (max-width: 768px) {
+      margin: 10px 0px;
+    }
+
+    .card {
+      width: 5rem;
+      height: 3rem;
+      background: $background-grey;
+      border-radius: 8px;
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .value {
+        font-size: 2rem;
+        color: $secondary-color;
+      }
+
+      .label {
+        font-size: small;
+      }
+    }
+  }
+}
