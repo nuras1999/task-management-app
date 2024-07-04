@@ -1,9 +1,12 @@
+import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { MatCheckboxModule } from "@angular/material/checkbox";
 
 @Component({
   selector: "app-tasks",
   standalone: true,
-  imports: [],
+  imports: [MatCheckboxModule, FormsModule, CommonModule],
   templateUrl: "./tasks.component.html",
   styleUrl: "./tasks.component.scss",
 })
@@ -11,7 +14,20 @@ export class TasksComponent {
   /**
    * List of tasks
    */
-  public myTasks = ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"];
+  public myTasks = [
+    {
+      isCompleted: true,
+      name: "Task 1",
+    },
+    {
+      isCompleted: false,
+      name: "Task 2",
+    },
+    {
+      isCompleted: true,
+      name: "Task 3",
+    },
+  ];
 
   /**
    * Delete tasks using its index

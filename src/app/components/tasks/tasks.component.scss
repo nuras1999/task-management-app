@@ -37,6 +37,10 @@
       @media (max-width: 768px) {
         margin-top: 16px;
       }
+
+      .strikeout {
+        text-decoration: line-through;
+      }
     }
     .action-buttons {
       display: flex;
@@ -44,6 +48,7 @@
 
       @media (max-width: 768px) {
         justify-content: flex-end;
+        gap: 16px;
       }
 
       .edit-button {

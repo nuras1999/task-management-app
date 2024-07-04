@@ -5,9 +5,10 @@
 
 <div class="tasks-list-container">
   @if(myTasks.length){ @for(task of myTasks; track task){
-  <div class="task-item">
-    <div class="task-title">
-      {{ task }}
+  <div class="task-item" [ngClass]="{ 'opacity-50': task.isCompleted }">
+    <div class="task-title d-flex">
+      <mat-checkbox class="pr-8" [(ngModel)]="task.isCompleted"></mat-checkbox>
+      <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.name }}</div>
     </div>
     <div class="action-buttons">
       <div class="edit-button">
