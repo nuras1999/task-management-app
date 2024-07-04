@@ -11,5 +11,5 @@ export class TasksComponent {
   /**
    * List of tasks
    */
-  public myTasks = [];
+  public myTasks = ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"];
 }
