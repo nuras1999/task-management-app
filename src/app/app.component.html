@@ -1,1 +1,8 @@
-Hello World :)
+<nav class="sidenav">
+  <button (click)="navigateTo('/dashboard')">Dashboard</button>
+  <button (click)="navigateTo('/tasks')">Tasks</button>
+</nav>
+
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>

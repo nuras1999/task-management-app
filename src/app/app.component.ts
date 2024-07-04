@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from "@angular/core";
+import { Router, RouterOutlet } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
 })
 export class AppComponent {
-  title = 'task-manager-app';
+  constructor(private router: Router) {}
+
+  /**
+   * Navigate to the specified route
+   * @param routeName Name of the route to navigate to
+   */
+  public navigateTo(routeName: string): void {
+    this.router.navigate([routeName]);
+  }
 }
