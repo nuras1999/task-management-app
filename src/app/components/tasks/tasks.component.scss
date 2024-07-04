@@ -1,1 +1,35 @@
 @import "../../app.component.scss";
+
+.tasks-list-container {
+  max-height: 70vh;
+  border: 1px solid $ternary-color;
+  border-radius: 8px;
+  padding: 32px;
+  margin: 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    max-height: 75vh;
+    padding: 16px;
+    margin: 16px 0px;
+  }
+
+  .task-item {
+    padding: 16px;
+    background: $ternary-color;
+    border-radius: 8px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  .placeholder {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    opacity: 0.7;
+  }
+}

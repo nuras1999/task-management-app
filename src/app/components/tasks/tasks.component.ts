@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-tasks',
+  selector: "app-tasks",
   standalone: true,
   imports: [],
-  templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.scss'
+  templateUrl: "./tasks.component.html",
+  styleUrl: "./tasks.component.scss",
 })
 export class TasksComponent {
-
+  /**
+   * List of tasks
+   */
+  public myTasks = [];
 }

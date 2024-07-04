@@ -2,3 +2,13 @@
   <h1 class="title">Tasks</h1>
   <div class="create-button"><i class="fa fa-plus pr-8"></i>New task</div>
 </div>
+
+<div class="tasks-list-container">
+  @if(myTasks.length){ @for(task of myTasks; track task){
+  <div class="task-item">
+    {{ task }}
+  </div>
+  } } @else {
+  <div class="placeholder">No tasks are available in the list</div>
+  }
+</div>
