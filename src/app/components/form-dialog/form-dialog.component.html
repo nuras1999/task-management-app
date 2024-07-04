@@ -1,0 +1,32 @@
+<div class="modal">
+  <div class="modal-content">
+    <!-- Close button -->
+    <span class="close" (click)="onClose()">&times;</span>
+
+    <h1 class="title">{{ task ? "Edit Task" : "Create Task" }}</h1>
+
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex flex-column form-container">
+        <textarea
+          formControlName="taskName"
+          type="text"
+          placeholder="Enter detailed description here..."
+          [ngClass]="{
+            'error-outline':
+              taskForm.get('taskName')?.invalid &&
+              taskForm.get('taskName')?.touched
+          }"
+        ></textarea>
+
+        <button
+          type="submit"
+          class="save-button"
+          [disabled]="taskForm.invalid"
+          [ngClass]="{ 'pointer-none': taskForm.invalid }"
+        >
+          {{ task ? "Save" : "Create" }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 <div class="header">
   <h1 class="title">Tasks</h1>
-  <div class="create-button"><i class="fa fa-plus pr-8"></i>New task</div>
+  <div class="create-button" (click)="openDialog()">
+    <i class="fa fa-plus pr-8"></i>New task
+  </div>
 </div>
 
 <div class="tasks-list-container">
@@ -8,10 +10,10 @@
   <div class="task-item" [ngClass]="{ 'opacity-50': task.isCompleted }">
     <div class="task-title d-flex">
       <mat-checkbox class="pr-8" [(ngModel)]="task.isCompleted"></mat-checkbox>
-      <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.name }}</div>
+      <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.taskName }}</div>
     </div>
     <div class="action-buttons">
-      <div class="edit-button">
+      <div class="edit-button" (click)="openDialog(task)">
         <i class="fa fa-pencil"></i>
         Edit
       </div>
@@ -25,3 +27,10 @@
   <div class="placeholder">No tasks are available in the list</div>
   }
 </div>
+
+<app-form-dialog
+  *ngIf="showDialog"
+  [task]="selectedTask"
+  (save)="saveTask($event)"
+  (close)="closeDialog()"
+></app-form-dialog>

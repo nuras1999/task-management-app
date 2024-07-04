@@ -32,7 +32,17 @@ h1 {
   display: flex;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .opacity-50 {
+  opacity: 0.5;
+}
+
+.pointer-none {
+  pointer-events: none;
+  cursor: auto;
   opacity: 0.5;
 }
 
