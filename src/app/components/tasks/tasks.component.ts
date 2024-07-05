@@ -3,14 +3,7 @@ import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormDialogComponent } from "../form-dialog/form-dialog.component";
-
-/**
- * Interface for Task details
- */
-export interface TaskDetails {
-  isCompleted: boolean;
-  taskName: string;
-}
+import { TaskDetails, TaskService } from "../../services/task.service";
 
 @Component({
   selector: "app-tasks",
@@ -21,30 +14,9 @@ export interface TaskDetails {
 })
 export class TasksComponent {
   /**
-   * List of sample default tasks
+   * List of tasks and its details
    */
-  public myTasks: TaskDetails[] = [
-    {
-      isCompleted: true,
-      taskName: "Task 1",
-    },
-    {
-      isCompleted: false,
-      taskName: "Task 2",
-    },
-    {
-      isCompleted: false,
-      taskName: "Task 3",
-    },
-    {
-      isCompleted: true,
-      taskName: "Task 4",
-    },
-    {
-      isCompleted: false,
-      taskName: "Task 5",
-    },
-  ];
+  public taskList: TaskDetails[] = [];
 
   /**
    * Details of the task that is to be edited
@@ -55,6 +27,14 @@ export class TasksComponent {
    * Show/hide the dialog box component
    */
   public showDialog = false;
+
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit() {
+    this.taskService.taskList$.subscribe((tasks) => {
+      this.taskList = tasks;
+    });
+  }
 
   /**
    * Show/hide the dialog box component with new/existing data
@@ -72,13 +52,13 @@ export class TasksComponent {
   public saveTask(task: TaskDetails): void {
     if (this.selectedTask) {
       // Edit existing task
-      const index = this.myTasks.findIndex(
+      const index = this.taskList.findIndex(
         (t) => t.taskName === this.selectedTask?.taskName
       );
-      this.myTasks.splice(index, 1, task);
+      this.taskService.updateTask(index, task);
     } else {
       // Create new task
-      this.myTasks.push(task);
+      this.taskService.addTask(task);
     }
     this.closeDialog();
   }
@@ -96,6 +76,6 @@ export class TasksComponent {
    * @param index - Index of tasks to delete
    */
   public deleteTask(index: number): void {
-    this.myTasks.splice(index, 1);
+    this.taskService.deleteTask(index);
   }
 }

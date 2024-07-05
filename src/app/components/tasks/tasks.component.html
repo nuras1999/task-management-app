@@ -6,12 +6,13 @@
 </div>
 
 <div class="tasks-list-container">
-  @if(myTasks.length){ @for(task of myTasks; track task){
+  @if(taskList.length){ @for(task of taskList; track task){
   <div class="task-item" [ngClass]="{ 'opacity-50': task.isCompleted }">
     <div class="task-title d-flex">
-      <mat-checkbox class="pr-8" [(ngModel)]="task.isCompleted"></mat-checkbox>
+      <input type="checkbox" class="checkbox" [(ngModel)]="task.isCompleted" />
       <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.taskName }}</div>
     </div>
+
     <div class="action-buttons">
       <div class="edit-button" (click)="openDialog(task)">
         <i class="fa fa-pencil"></i>
@@ -24,10 +25,12 @@
     </div>
   </div>
   } } @else {
+  <!-- Placeholder for empty task list -->
   <div class="placeholder">No tasks are available in the list</div>
   }
 </div>
 
+<!-- Create/Edit form dialog container -->
 <app-form-dialog
   *ngIf="showDialog"
   [task]="selectedTask"

@@ -34,12 +34,20 @@
     }
 
     .task-title {
+      align-items: center;
+      gap: 8px;
+
       @media (max-width: 768px) {
         margin-top: 16px;
       }
 
       @media (min-width: 768px) {
         max-width: 80%;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
+        cursor: pointer;
       }
 
       .strikeout {

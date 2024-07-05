@@ -13,7 +13,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from "@angular/forms";
-import { TaskDetails } from "../tasks/tasks.component";
+import { TaskDetails } from "../../services/task.service";
 
 @Component({
   selector: "app-form-dialog",
