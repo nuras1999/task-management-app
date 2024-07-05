@@ -1,27 +1,67 @@
-# TaskManagerApp
+# Tasks360 - Task Management App for KovaiCo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Tasks360 is a comprehensive task management web application developed as part of a hiring process. This project demonstrates the skills of a senior frontend developer in Angular by utilizing a wide range of Angular concepts, along with HTML, SCSS, and TypeScript.
 
-## Development server
+> This whole project was built in less than 2 days! (see commits)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##### 🎉 Visit https://tasks360-kovaico.web.app/ to see this hosted web application🎉 
 
-## Code scaffolding
+## Overview 
+The application provides functionalities to create, update, delete, and view tasks, with a focus on user-friendly design and accessibility.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
+- Task Management: Create, update, delete, and view tasks.
+- Prioritization: Assign and view task priorities.
+- Responsive Design: Optimized for desktop and mobile devices.
+- Accessibility: Keyboard navigation and screen reader support.
+- Sorting: Sort tasks and arrange tasks by priority
+- Analytics: Various stats and metrics of tasks status
+- Much more...
 
-## Build
+## Screens
+- ##### Dashboard
+    - Provides various metrics and stats of tasks
+    - Total tasks, completed tasks, pending tasks, completion percentage
+    - List of pending high priority tasks
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- ##### Tasks 
+    - View, edit, create, complete and delete tasks
+    - Create/Edit task names and priorities
+    - Sort tasks in ascending/descending order with priorities
 
-## Running unit tests
+> This whole project was built in less than 2 days! (see commits)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### 🎉 Visit https://tasks360-kovaico.web.app/ to see this hosted web application🎉 
 
-## Running end-to-end tests
+## Development workspace
+- Clone this project from GitHub 
+    ```
+    git clone https://github.com/nuras1999/task-management-app.git
+    cd task-management-app
+    ```
+- Use `npm i` to install project dependency node modules
+- Run `ng serve` to start the local server
+- Navigate to `http://localhost:4200/` to see the live a0pplication
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Angular version
+###### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
 
-## Further help
+## Concepts used 
+- Standalone Components
+- Services
+- Custom Pipe (PriorityPipe)
+- Dependency Injection
+- Routing
+- Reactive Forms
+- RxJS Observables
+- HostListener
+- Lifecycle Hooks
+- Pure CSS/SCSS (without Bootstrap/Material/Tailwind/etc)
+- Responsive Design
+- Form Validation
+- Data Binding
+- Many more...
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+> This whole project was built in less than 2 days! (see commits)
+
+##### 🎉 Visit https://tasks360-kovaico.web.app/ to see this hosted web application🎉 
