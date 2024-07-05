@@ -8,6 +8,7 @@
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
       <div class="d-flex flex-column form-container">
         <textarea
+          #textareaInput
           formControlName="taskName"
           type="text"
           placeholder="Enter detailed description here..."

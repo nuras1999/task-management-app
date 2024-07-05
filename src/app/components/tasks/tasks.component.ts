@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, HostListener } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormDialogComponent } from "../form-dialog/form-dialog.component";
@@ -77,5 +77,18 @@ export class TasksComponent {
    */
   public deleteTask(index: number): void {
     this.taskService.deleteTask(index);
+  }
+
+  /**
+   * HostListener to listen for key events to open new task dialog box
+   * @param event - Key event
+   */
+  @HostListener("window:keydown", ["$event"])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    if (event.ctrlKey && event.key === "Enter") {
+      event.preventDefault();
+      event.stopPropagation();
+      this.openDialog();
+    }
   }
 }
