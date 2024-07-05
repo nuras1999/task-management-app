@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormDialogComponent } from "../form-dialog/form-dialog.component";
 import { TaskDetails, TaskService } from "../../services/task.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-tasks",
@@ -28,12 +29,25 @@ export class TasksComponent {
    */
   public showDialog = false;
 
+  /**
+   * Subscription for receiving latest tasklist
+   */
+  private taskListSubscription: Subscription | undefined;
+
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
-    this.taskService.taskList$.subscribe((tasks) => {
-      this.taskList = tasks;
-    });
+    this.taskListSubscription = this.taskService.taskList$.subscribe(
+      (tasks) => {
+        this.taskList = tasks;
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.taskListSubscription) {
+      this.taskListSubscription.unsubscribe();
+    }
   }
 
   /**

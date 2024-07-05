@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { TaskDetails, TaskService } from "../../services/task.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-dashboard",
@@ -19,12 +20,25 @@ export class DashboardComponent {
     completionPercentage: 0,
   };
 
+  /**
+   * Subscription for receiving latest tasklist
+   */
+  private taskListSubscription: Subscription | undefined;
+
   constructor(private taskService: TaskService) {}
 
   ngOnInit() {
-    this.taskService.taskList$.subscribe((tasks) => {
-      this.calculateTaskStats(tasks);
-    });
+    this.taskListSubscription = this.taskService.taskList$.subscribe(
+      (tasks) => {
+        this.calculateTaskStats(tasks);
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.taskListSubscription) {
+      this.taskListSubscription.unsubscribe();
+    }
   }
 
   /**
