@@ -21,6 +21,11 @@ export class DashboardComponent {
   };
 
   /**
+   * List of high priority tasks
+   */
+  public highPriorityTasks: TaskDetails[] = [];
+
+  /**
    * Subscription for receiving latest tasklist
    */
   private taskListSubscription: Subscription | undefined;
@@ -31,6 +36,7 @@ export class DashboardComponent {
     this.taskListSubscription = this.taskService.taskList$.subscribe(
       (tasks) => {
         this.calculateTaskStats(tasks);
+        this.filterHighPriorityTasks(tasks);
       }
     );
   }
@@ -65,6 +71,16 @@ export class DashboardComponent {
         : 0;
     this.statsInfo.completionPercentage = Math.round(
       this.statsInfo.completionPercentage
+    );
+  }
+
+  /**
+   * Filter all the unfinished high priority tasks from the task list
+   */
+  private filterHighPriorityTasks(taskList: TaskDetails[]): void {
+    this.highPriorityTasks = taskList.filter(
+      (taskListItem) =>
+        taskListItem.priority === "high" && !taskListItem.isCompleted
     );
   }
 }

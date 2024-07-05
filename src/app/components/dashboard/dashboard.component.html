@@ -3,10 +3,13 @@
 </header>
 
 <main class="outer-container">
+  <!-- Overall progress percentage -->
   <section class="progress-container">
     <div class="percentage">{{ statsInfo.completionPercentage }}%</div>
     <div class="content">completed</div>
   </section>
+
+  <!-- Current status of total/completed/pending tasks -->
   <section class="overview-container">
     <div class="card">
       <div class="value">{{ statsInfo.totalTasks }}</div>
@@ -20,5 +23,17 @@
       <div class="value">{{ statsInfo.pendingTasks }}</div>
       <div class="label">Pending</div>
     </div>
+  </section>
+
+  <!-- List of high priority tasks -->
+  <section class="high-priority-list">
+    <div class="title">High priority tasks</div>
+    @if(highPriorityTasks.length){ @for(task of highPriorityTasks; track task) {
+    <div class="task-item">
+      <span class="pr-8">{{ $index + 1 }}.</span>{{ task.taskName }}
+    </div>
+    } }@else {
+    <div class="placeholder">No high priority items</div>
+    }
   </section>
 </main>

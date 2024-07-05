@@ -38,12 +38,6 @@ export class TaskService {
       priority: "high",
     },
     {
-      taskName:
-        "Have to document the developer documentation of Document360 product",
-      isCompleted: false,
-      priority: "medium",
-    },
-    {
       taskName: "Plan team lunch and team outing",
       isCompleted: false,
       priority: "low",
@@ -51,6 +45,22 @@ export class TaskService {
     {
       taskName: "Update the time sheet for current week",
       isCompleted: true,
+      priority: "medium",
+    },
+    {
+      taskName:
+        "Have to document the developer documentation of Document360 product",
+      isCompleted: false,
+      priority: "high",
+    },
+    {
+      taskName: "This is an example of another high priority item",
+      isCompleted: true,
+      priority: "high",
+    },
+    {
+      taskName: "Write a book about Steve jobs",
+      isCompleted: false,
       priority: "medium",
     },
   ];
