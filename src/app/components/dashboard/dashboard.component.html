@@ -1,13 +1,13 @@
-<div class="header">
+<header class="header">
   <h1 class="title">Dashboard</h1>
-</div>
+</header>
 
-<div class="outer-container">
-  <div class="progress-container">
+<main class="outer-container">
+  <section class="progress-container">
     <div class="percentage">{{ statsInfo.completionPercentage }}%</div>
     <div class="content">completed</div>
-  </div>
-  <div class="overview-container">
+  </section>
+  <section class="overview-container">
     <div class="card">
       <div class="value">{{ statsInfo.totalTasks }}</div>
       <div class="label">Total</div>
@@ -20,5 +20,5 @@
       <div class="value">{{ statsInfo.pendingTasks }}</div>
       <div class="label">Pending</div>
     </div>
-  </div>
-</div>
+  </section>
+</main>

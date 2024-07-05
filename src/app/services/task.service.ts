@@ -41,7 +41,7 @@ export class TaskService {
    * @param task - New task that is added to task list
    */
   public addTask(task: TaskDetails): void {
-    this.taskList.push(task);
+    this.taskList = [...this.taskList, task];
     this.taskListSubject.next(this.taskList);
   }
 

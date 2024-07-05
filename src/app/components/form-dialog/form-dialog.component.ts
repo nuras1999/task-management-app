@@ -21,7 +21,7 @@ import { TaskDetails } from "../../services/task.service";
 @Component({
   selector: "app-form-dialog",
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: "./form-dialog.component.html",
   styleUrl: "./form-dialog.component.scss",
 })

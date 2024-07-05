@@ -35,6 +35,7 @@
 
     .task-title {
       align-items: center;
+      display: flex;
       gap: 8px;
 
       @media (max-width: 768px) {

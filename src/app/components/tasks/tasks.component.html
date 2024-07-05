@@ -1,4 +1,4 @@
-<div class="header">
+<header class="header">
   <h1 class="title">Tasks</h1>
   <div
     class="create-button"
@@ -8,16 +8,18 @@
   >
     <i class="fa fa-plus pr-8"></i>New task
   </div>
-</div>
+</header>
 
 <div class="tasks-list-container">
   @if(taskList.length){ @for(task of taskList; track task){
   <div class="task-item" [ngClass]="{ 'opacity-50': task.isCompleted }">
-    <div class="task-title d-flex">
+    <!-- Checkbox and title -->
+    <div class="task-title">
       <input type="checkbox" class="checkbox" [(ngModel)]="task.isCompleted" />
       <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.taskName }}</div>
     </div>
 
+    <!-- Action buttons -->
     <div class="action-buttons">
       <div class="edit-button" (click)="openDialog(task)">
         <i class="fa fa-pencil"></i>

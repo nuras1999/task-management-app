@@ -1,14 +1,19 @@
-<div class="modal">
+<div class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
   <div class="modal-content">
     <!-- Close button -->
-    <span class="close" (click)="onClose()">&times;</span>
+    <span class="close" (click)="onClose()" aria-label="Close">&times;</span>
 
-    <h1 class="title">{{ task ? "Edit Task" : "Create Task" }}</h1>
+    <!-- Dialog title -->
+    <h1 class="title" id="modalTitle">
+      {{ task ? "Edit Task" : "Create Task" }}
+    </h1>
 
+    <!-- Form inputs -->
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
-      <div class="d-flex flex-column form-container">
+      <div class="form-container">
         <textarea
           #textareaInput
+          id="taskName"
           formControlName="taskName"
           type="text"
           placeholder="Enter detailed description here..."

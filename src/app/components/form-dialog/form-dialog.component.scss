@@ -26,6 +26,8 @@
   .form-container {
     gap: 16px;
     align-items: end;
+    display: flex;
+    flex-direction: column;
 
     textarea {
       min-height: 80px;
