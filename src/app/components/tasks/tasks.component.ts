@@ -1,17 +1,17 @@
 import { CommonModule } from "@angular/common";
 import { Component, HostListener } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { MatCheckboxModule } from "@angular/material/checkbox";
 import { FormDialogComponent } from "../form-dialog/form-dialog.component";
 import { TaskDetails, TaskService } from "../../services/task.service";
 import { Subscription } from "rxjs";
+import { PriorityPipe } from "../../pipes/priority.pipe";
 
 @Component({
   selector: "app-tasks",
   standalone: true,
-  imports: [MatCheckboxModule, FormsModule, CommonModule, FormDialogComponent],
   templateUrl: "./tasks.component.html",
   styleUrl: "./tasks.component.scss",
+  imports: [FormsModule, CommonModule, FormDialogComponent, PriorityPipe],
 })
 export class TasksComponent {
   /**

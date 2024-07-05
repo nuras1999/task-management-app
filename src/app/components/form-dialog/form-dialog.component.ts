@@ -55,6 +55,7 @@ export class FormDialogComponent implements OnChanges {
   constructor(private fb: FormBuilder) {
     this.taskForm = this.fb.group({
       taskName: ["", Validators.required],
+      priority: ["medium"],
     });
   }
 

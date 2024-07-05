@@ -17,6 +17,11 @@
     <div class="task-title">
       <input type="checkbox" class="checkbox" [(ngModel)]="task.isCompleted" />
       <div [ngClass]="{ strikeout: task.isCompleted }">{{ task.taskName }}</div>
+
+      <!-- Priority -->
+      <div [ngClass]="task.priority | priority">
+        {{ task.priority | titlecase }}
+      </div>
     </div>
 
     <!-- Action buttons -->

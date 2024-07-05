@@ -11,6 +11,7 @@
     <!-- Form inputs -->
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
       <div class="form-container">
+        <!-- Task description -->
         <textarea
           #textareaInput
           id="taskName"
@@ -23,6 +24,16 @@
               taskForm.get('taskName')?.touched
           }"
         ></textarea>
+
+        <!-- Priority dropdown -->
+        <div class="priority-container">
+          <label for="priority">Priority</label>
+          <select formControlName="priority" id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
 
         <button
           type="submit"

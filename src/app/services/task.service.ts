@@ -7,6 +7,7 @@ import { BehaviorSubject } from "rxjs";
 export interface TaskDetails {
   isCompleted: boolean;
   taskName: string;
+  priority: "high" | "medium" | "low";
 }
 
 @Injectable({
@@ -20,14 +21,24 @@ export class TaskService {
     {
       taskName: "Interview candidates for Document360 frontend team",
       isCompleted: false,
+      priority: "high",
     },
     {
       taskName:
         "Have to document the developer documentation of Document360 product",
       isCompleted: false,
+      priority: "medium",
     },
-    { taskName: "Update the time sheet for current week", isCompleted: true },
-    { taskName: "Plan team lunch and team outing", isCompleted: false },
+    {
+      taskName: "Plan team lunch and team outing",
+      isCompleted: false,
+      priority: "low",
+    },
+    {
+      taskName: "Update the time sheet for current week",
+      isCompleted: true,
+      priority: "medium",
+    },
   ];
 
   /**
