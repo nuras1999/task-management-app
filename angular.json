@@ -27,6 +27,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/task-list-icon.svg",
               "src/assets"
             ],
             "styles": [
