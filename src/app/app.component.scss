@@ -75,7 +75,6 @@
     display: flex;
     align-items: center;
     gap: 32px;
-    cursor: pointer;
 
     @media (max-width: 768px) {
       margin-top: 24px;
@@ -91,6 +90,7 @@
       border-radius: 8px;
       font-size: small;
       transition: all 0.1s linear;
+      cursor: pointer;
 
       &:hover {
         transform: translateY(-2px);
