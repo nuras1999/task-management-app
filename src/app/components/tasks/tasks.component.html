@@ -1,12 +1,22 @@
 <header class="header">
   <h1 class="title">Tasks</h1>
-  <div
-    class="create-button"
-    (click)="openDialog()"
-    tabindex="0"
-    aria-label="Create new task"
-  >
-    <i class="fa fa-plus pr-8"></i>New task
+  <div class="header-buttons">
+    <div
+      class="sort-button"
+      (click)="sortTasklist()"
+      tabindex="0"
+      aria-label="Sort by priority"
+    >
+      <i class="fa-solid fa-sort pr-8"></i>Sort by priority
+    </div>
+    <div
+      class="create-button"
+      (click)="openDialog()"
+      tabindex="0"
+      aria-label="Create new task"
+    >
+      <i class="fa fa-plus pr-8"></i>New task
+    </div>
   </div>
 </header>
 

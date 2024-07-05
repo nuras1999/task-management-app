@@ -71,22 +71,49 @@
     margin: 0px;
   }
 
-  .create-button {
-    background: $secondary-color;
-    color: $text-color;
-    padding: 1rem;
-    border-radius: 2rem;
+  .header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
     cursor: pointer;
-    font-weight: bold;
-    transition: all 0.1s linear;
 
     @media (max-width: 768px) {
-      font-weight: normal;
-      padding: 0.5rem;
+      margin-top: 24px;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      width: -webkit-fill-available;
+      gap: unset;
     }
 
-    &:hover {
-      transform: translateY(-2px);
+    .sort-button {
+      padding: 8px;
+      border: 1px solid $ternary-color;
+      border-radius: 8px;
+      font-size: small;
+      transition: all 0.1s linear;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .create-button {
+      background: $secondary-color;
+      color: $text-color;
+      padding: 1rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.1s linear;
+
+      @media (max-width: 768px) {
+        font-weight: normal;
+        padding: 0.5rem;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+      }
     }
   }
 }

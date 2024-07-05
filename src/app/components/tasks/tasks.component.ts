@@ -105,4 +105,11 @@ export class TasksComponent {
       this.openDialog();
     }
   }
+
+  /**
+   * Sort the tasklist in ascending/descending order
+   */
+  public sortTasklist(): void {
+    this.taskService.sortTasksByPriority();
+  }
 }

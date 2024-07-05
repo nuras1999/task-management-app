@@ -15,6 +15,20 @@ export interface TaskDetails {
 })
 export class TaskService {
   /**
+   * Sorting order of tasks with respect to its priorities
+   */
+  private ascendingOrder = false;
+
+  /**
+   * Mapping values of priorities with its name
+   */
+  private priorityOrder: { [key: string]: number } = {
+    high: 3,
+    medium: 2,
+    low: 1,
+  };
+
+  /**
    * Default list of tasks
    */
   private taskList: TaskDetails[] = [
@@ -73,5 +87,33 @@ export class TaskService {
   public deleteTask(index: number): void {
     this.taskList.splice(index, 1);
     this.taskListSubject.next(this.taskList);
+  }
+
+  /**
+   * Sort the list of tasks by their priority
+   */
+  public sortTasksByPriority(): void {
+    this.taskList.sort((a, b) => {
+      if (this.ascendingOrder) {
+        return this.comparePriorities(a.priority, b.priority);
+      } else {
+        return this.comparePriorities(b.priority, a.priority);
+      }
+    });
+
+    this.taskListSubject.next(this.taskList);
+
+    // Toggle sorting order for the next click
+    this.ascendingOrder = !this.ascendingOrder;
+  }
+
+  /**
+   * Compare and return the priority values
+   * @param priority1 Value 1 for comparison
+   * @param priority2 Value 2 for comparison
+   * @returns priority value
+   */
+  private comparePriorities(priority1: string, priority2: string): number {
+    return this.priorityOrder[priority1] - this.priorityOrder[priority2];
   }
 }
