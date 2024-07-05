@@ -4,20 +4,20 @@
 
 <div class="outer-container">
   <div class="progress-container">
-    <div class="percentage">80%</div>
+    <div class="percentage">{{ statsInfo.completionPercentage }}%</div>
     <div class="content">completed</div>
   </div>
   <div class="overview-container">
     <div class="card">
-      <div class="value">15</div>
+      <div class="value">{{ statsInfo.totalTasks }}</div>
       <div class="label">Total</div>
     </div>
     <div class="card">
-      <div class="value">7</div>
+      <div class="value">{{ statsInfo.completedTasks }}</div>
       <div class="label">Completed</div>
     </div>
     <div class="card">
-      <div class="value">8</div>
+      <div class="value">{{ statsInfo.pendingTasks }}</div>
       <div class="label">Pending</div>
     </div>
   </div>
